@@ -6,11 +6,9 @@ public class Stat
 
     public enum StatType
     {
-        Damage,
-        AttackRate,
-        CritChance,
-        Mobility,
-        SwingArc,
+        Color,
+        Creativity,
+        Uniqueness,
     }
 
     public Stat(StatType _type, float _value = 0)

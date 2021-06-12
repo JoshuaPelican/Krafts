@@ -15,6 +15,6 @@ public class UIPartGiver : MonoBehaviour
 
     public void GivePart()
     {
-        Instantiate(partToGive, new Vector3(transform.position.x, transform.position.y, -9.5f), Quaternion.identity, weaponTransform);
+        Instantiate(partToGive, transform.position, Quaternion.identity, weaponTransform);
     }
 }
