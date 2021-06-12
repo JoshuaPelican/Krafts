@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3946618882648880719}
   - component: {fileID: 3946618882648880717}
   - component: {fileID: 3946618882648880713}
-  - component: {fileID: 5312482423834070167}
+  - component: {fileID: 5601729596307550867}
   m_Layer: 0
-  m_Name: Scissors
+  m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 293053302825587759, guid: b0baae0e0e0d958438b82d544fdc9a44, type: 3}
+  m_Sprite: {fileID: 1422259861377778311, guid: b0baae0e0e0d958438b82d544fdc9a44,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -109,12 +110,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statMods:
-  - statType: 0
-    value: 2.5
+  - statType: 3
+    value: 1.5
   useType: 0
   projectile: {fileID: 0}
   count: 0
---- !u!60 &5312482423834070167
+--- !u!60 &5601729596307550867
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +132,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.5}
+    oldSize: {x: 1.6875, y: 1.0625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -139,34 +140,25 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.0625, y: -0.25}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.6875, y: -0.5}
-      - {x: 0.75, y: -0.4375}
-      - {x: 0.75, y: -0.125}
-      - {x: 0.4375, y: 0}
-      - {x: 0.75, y: 0.125}
-      - {x: 0.75, y: 0.4375}
-      - {x: 0.6875, y: 0.5}
-      - {x: 0.5, y: 0.5}
-      - {x: 0, y: 0.25}
-      - {x: -0.0625, y: 0.3125}
-      - {x: 0, y: 0.375}
-      - {x: 0, y: 0.5}
-      - {x: -0.1875, y: 0.75}
-      - {x: -0.6875, y: 0.75}
-      - {x: -0.75, y: 0.6875}
-      - {x: -0.75, y: 0.125}
-      - {x: -0.625, y: 0}
-      - {x: -0.375, y: 0}
-      - {x: -0.3125, y: 0.0625}
-      - {x: -0.25, y: 0}
-      - {x: -0.3125, y: -0.0625}
-      - {x: -0.375, y: 0}
-      - {x: -0.5, y: 0}
-      - {x: -0.75, y: -0.1875}
-      - {x: -0.75, y: -0.75}
-      - {x: -0.1875, y: -0.75}
-      - {x: -0.0625, y: -0.625}
-      - {x: 0, y: -0.375}
-      - {x: -0.0625, y: -0.3125}
+    - - {x: 0.71875, y: -0.46875}
+      - {x: 0.84375, y: -0.34375}
+      - {x: 0.78125, y: 0.03125}
+      - {x: 0.84375, y: 0.09375}
+      - {x: 0.84375, y: 0.28125}
+      - {x: 0.71875, y: 0.40625}
+      - {x: 0.65625, y: 0.40625}
+      - {x: 0.46875, y: 0.21875}
+      - {x: 0.34375, y: 0.28125}
+      - {x: 0.15625, y: 0.46875}
+      - {x: -0.03125, y: 0.53125}
+      - {x: -0.21875, y: 0.53125}
+      - {x: -0.34375, y: 0.40625}
+      - {x: -0.59375, y: 0.34375}
+      - {x: -0.84375, y: 0.15625}
+      - {x: -0.84375, y: -0.21875}
+      - {x: -0.71875, y: -0.40625}
+      - {x: -0.40625, y: -0.53125}
+      - {x: 0.03125, y: -0.53125}
+      - {x: 0.09375, y: -0.46875}
+      - {x: 0.21875, y: -0.46875}
+      - {x: 0.46875, y: -0.34375}

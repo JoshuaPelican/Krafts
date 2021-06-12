@@ -16,10 +16,22 @@ public class Weapon : MonoBehaviour
     };
 
     public float shrinkSize;
+    public bool active = false;
+
+    private Transform player;
+
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player").transform;
+    }
 
     private void Update()
     {
-        GetClickInput();
+        if (active)
+        {
+            transform.up = (Vector3)InputUtility.MousePosition() - transform.parent.position;
+            GetClickInput();
+        }
     }
 
     private void GetAllParts()
@@ -55,7 +67,27 @@ public class Weapon : MonoBehaviour
             Debug.Log(stat.type.ToString() + " is " + stat.value);
         }
 
+        Equip(true);
+
         ShrinkWeapon();
+    }
+
+    public void SetActivate(bool value)
+    {
+        active = value;
+    }
+
+    public void Equip(bool value)
+    {
+        if(value == true)
+        {
+            transform.SetParent(player);
+            transform.localPosition = Vector3.zero;
+        }
+        else
+        {
+            transform.parent = null;
+        }
     }
 
     private void ShrinkWeapon()
@@ -73,7 +105,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private Stat GetStatOfType(Stat.StatType statType)
+    public Stat GetStatOfType(Stat.StatType statType)
     {
         return stats.Find(x => x.type == statType);
     }
@@ -98,36 +130,12 @@ public class Weapon : MonoBehaviour
 
     private void UseWeapon()
     {
-        bool swing = false;
-
         foreach (Transform child in children)
         {
             if(child.TryGetComponent(out Part part))
             {
                 part.Shoot();
-
-                if (part.useType == UseType.Swing)
-                {
-                    swing = true;
-                }
             }
-        }
-
-        if (swing)
-        {
-            StartCoroutine("SwingSword");
-        }
-    }
-
-    private IEnumerator SwingSword()
-    {
-        float timePerDegree = GetStatOfType(Stat.StatType.SwingArc).value / GetStatOfType(Stat.StatType.AttackRate).value;
-
-        for (int i = 0; i < GetStatOfType(Stat.StatType.SwingArc).value; i++)
-        {
-            Debug.Log("Swinging Sword");
-            transform.Rotate(Vector3.forward, 1);
-            yield return new WaitForSeconds(timePerDegree);
         }
     }
 }

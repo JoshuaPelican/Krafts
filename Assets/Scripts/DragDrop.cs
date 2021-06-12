@@ -14,14 +14,14 @@ public class DragDrop : MonoBehaviour
     {
         if (active)
         {
-            mousePos = GetMousePosition();
-            transform.position = mousePos;
-        }
-    }
+            mousePos = InputUtility.MousePosition();
+            transform.position = new Vector3(mousePos.x, mousePos.y, transform.position.z);
 
-    public Vector2 GetMousePosition()
-    {
-        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 rotation = transform.rotation.eulerAngles;
+            rotation.z -= InputUtility.HorizontalAxis(true) * 100 * Time.deltaTime;
+
+            transform.rotation = Quaternion.Euler(rotation);
+        }
     }
 
     public void SetActive(bool value)
