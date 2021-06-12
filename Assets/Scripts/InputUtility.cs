@@ -21,4 +21,25 @@ public static class InputUtility
         else
             return Input.GetAxis("Vertical");
     }
+
+    public static bool ClickedObject
+    {
+        get { return Physics2D.OverlapPoint(MousePosition, LayerMask.GetMask("Part")); }
+    }
+
+    public static GameObject GetClickedObject()
+    {
+        Collider2D hit = Physics2D.OverlapPoint(MousePosition, LayerMask.GetMask("Part"));
+
+        if (ClickedObject)
+        {
+            Debug.Log("Clicked " + hit.name);
+            return hit.gameObject;
+        }
+        else
+        {
+            Debug.Log("Clicked Nothing");
+            return null;
+        }
+    }
 }

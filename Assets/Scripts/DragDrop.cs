@@ -2,7 +2,6 @@
 
 public class DragDrop : MonoBehaviour
 {
-    private Vector2 mousePos;
     public static bool holding;
     private bool active;
 
@@ -13,26 +12,33 @@ public class DragDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && !active && !holding)
+        if (ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && !active && !holding)
         {
+            Debug.Log("Pickup " + name);
+            ToolManager.instance.NextZ();
             SetActive(true);
         }
-        else if(ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && active && holding)
-        {
-            SetActive(false);
-        }
     }
+
     private void Update()
     {
         if (active)
         {
-            mousePos = InputUtility.MousePosition;
-            transform.position = new Vector3(mousePos.x, mousePos.y, transform.position.z);
+            Vector3 offsetPos = new Vector3(InputUtility.MousePosition.x, InputUtility.MousePosition.y, ToolManager.instance.currentZ);
+            transform.position = offsetPos;
 
-            Vector3 rotation = transform.rotation.eulerAngles;
-            rotation.z -= InputUtility.HorizontalAxis(true) * 100 * Time.deltaTime;
+            float rotationSpeed = InputUtility.HorizontalAxis(true) * 100 * Time.deltaTime;
 
-            transform.rotation = Quaternion.Euler(rotation);
+            transform.Rotate(Vector3.forward, rotationSpeed);
+        }
+    }
+
+    private void OnMouseUp()
+    {
+        if (ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && active)
+        {
+            Debug.Log("Place Down " + name);
+            SetActive(false);
         }
     }
 

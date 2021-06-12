@@ -10,10 +10,20 @@ public class ToolManager : MonoBehaviour
     }
     #endregion
 
+    public Texture2D manipulateCursor;
+    public Texture2D glueCursor;
+
     public Sprite[] glueBlobs;
     public GameObject gluePrefab;
 
     private Tool selectedTool = Tool.Manipulate;
+
+    public float currentZ = 0;
+
+    public void NextZ()
+    {
+        currentZ -= .01f;
+    }
 
     public enum Tool
     {
@@ -38,6 +48,21 @@ public class ToolManager : MonoBehaviour
     public void SelectTool(string toolName)
     {
         SelectedTool = (Tool)System.Enum.Parse(typeof(Tool), toolName);
+
+        ChangeCursor();
+    }
+
+    private void ChangeCursor()
+    {
+        switch (SelectedTool)
+        {
+            case Tool.Manipulate:
+                Cursor.SetCursor(manipulateCursor, Vector2.one * 24, CursorMode.Auto);
+                break;
+            case Tool.Glue:
+                Cursor.SetCursor(glueCursor, Vector2.zero, CursorMode.Auto);
+                break;
+        }
     }
 
     private void Update()
@@ -47,22 +72,16 @@ public class ToolManager : MonoBehaviour
             switch (selectedTool)
             {
                 case Tool.Glue:
-                    GameObject newGlue = Instantiate(gluePrefab, InputUtility.MousePosition, Quaternion.identity, GetClickedObject());
-                    MakeRandomGlue(newGlue);
+                    GameObject clickedObject = InputUtility.GetClickedObject();
+                    NextZ();
+                    if (InputUtility.ClickedObject)
+                    {
+                        GameObject newGlue = Instantiate(gluePrefab, new Vector3(InputUtility.MousePosition.x, InputUtility.MousePosition.y, currentZ), Quaternion.identity, clickedObject.transform);
+                        MakeRandomGlue(newGlue);
+                    }
                     break;
             }
         }
-    }
-
-    public Transform GetClickedObject()
-    {
-        Vector2 mousePos = InputUtility.MousePosition;
-        Collider2D hit = Physics2D.OverlapPoint(mousePos);
-
-        if (hit)
-            return hit.gameObject.transform;
-        else
-            return null;
     }
 
     public void MakeRandomGlue(GameObject newGlue)

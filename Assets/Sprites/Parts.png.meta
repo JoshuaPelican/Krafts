@@ -1,34 +1,34 @@
 fileFormatVersion: 2
-guid: 65eabac1f8c101d40bf4d00a29806cbf
+guid: dfcc8881387ca5741841604877dd2c2e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8424108464234442520
-    second: GlueSplats_0
+      213: 6987615213105630014
+    second: Parts_0
   - first:
-      213: -1839462367953044225
-    second: GlueSplats_1
+      213: 6658516375458014310
+    second: Parts_1
   - first:
-      213: -3463793587851015095
-    second: GlueSplats_2
+      213: 3854670643217274881
+    second: Parts_2
   - first:
-      213: -7269518043168552664
-    second: GlueSplats_3
+      213: -3311347935980118092
+    second: Parts_3
   - first:
-      213: -9146140499800230016
-    second: GlueSplats_4
+      213: 4181045462435566371
+    second: Parts_4
   - first:
-      213: -7251882786350836167
-    second: GlueSplats_5
+      213: -6055630789501853989
+    second: Parts_5
   - first:
-      213: 6753639304560970950
-    second: GlueSplats_6
+      213: 8602164171127035671
+    second: Parts_6
   - first:
-      213: -4540222270354782965
-    second: GlueSplats_7
+      213: 3215425007756295294
+    second: Parts_7
   - first:
-      213: -5393964713833631684
-    second: GlueSplats_8
+      213: 3217107314111560957
+    second: Parts_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -88,7 +88,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -100,7 +100,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -112,7 +112,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Windows Store Apps
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -124,7 +124,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -136,7 +136,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -148,7 +148,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -162,55 +162,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GlueSplats_0
+      name: Parts_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 6
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e0d1ff0cfd871b80800000000000000
-      internalID: -8424108464234442520
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GlueSplats_1
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 4
-        width: 5
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ffcb574e8bae876e0800000000000000
-      internalID: -1839462367953044225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GlueSplats_2
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 4
+        x: 2
+        y: 100
         width: 4
-        height: 7
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94c4dd475122eefc0800000000000000
-      internalID: -3463793587851015095
+      spriteID: e3bc64ca30ff8f060800000000000000
+      internalID: 6987615213105630014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GlueSplats_3
+      name: Parts_1
       rect:
         serializedVersion: 2
-        x: 21
-        y: 4
-        width: 5
-        height: 7
+        x: 10
+        y: 114
+        width: 12
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,40 +197,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82945a4fadb7d1b90800000000000000
-      internalID: -7269518043168552664
+      spriteID: 664eb4a7d5dc76c50800000000000000
+      internalID: 6658516375458014310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GlueSplats_4
+      name: Parts_2
       rect:
         serializedVersion: 2
-        x: 28
-        y: 6
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 087f79b7ca1621180800000000000000
-      internalID: -9146140499800230016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GlueSplats_5
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 5
-        width: 5
+        x: 24
+        y: 115
+        width: 10
         height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -281,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 936d9c627032c5b90800000000000000
-      internalID: -7251882786350836167
+      spriteID: 108971fe68a8e7530800000000000000
+      internalID: 3854670643217274881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GlueSplats_6
+      name: Parts_3
       rect:
         serializedVersion: 2
-        x: 41
-        y: 6
+        x: 36
+        y: 99
         width: 5
-        height: 5
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cc09794a2fb9bd50800000000000000
-      internalID: 6753639304560970950
+      spriteID: 4bf9e24b89abb02d0800000000000000
+      internalID: -3311347935980118092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GlueSplats_7
+      name: Parts_4
       rect:
         serializedVersion: 2
-        x: 48
-        y: 2
-        width: 8
-        height: 9
+        x: 46
+        y: 118
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,20 +260,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b058f2676e3edf0c0800000000000000
-      internalID: -4540222270354782965
+      spriteID: 3231b3a22be060a30800000000000000
+      internalID: 4181045462435566371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GlueSplats_8
+      name: Parts_5
       rect:
         serializedVersion: 2
-        x: 58
-        y: 1
-        width: 10
-        height: 10
+        x: 56
+        y: 113
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,8 +281,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3074f4dba9c425b0800000000000000
-      internalID: -5393964713833631684
+      spriteID: bded2dc81e316fba0800000000000000
+      internalID: -6055630789501853989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Parts_6
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 102
+        width: 7
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7179e97ccb6016770800000000000000
+      internalID: 8602164171127035671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Parts_7
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 103
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7cb83d220c7f9c20800000000000000
+      internalID: 3215425007756295294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Parts_8
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 105
+        width: 3
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfc3ee5ae0675ac20800000000000000
+      internalID: 3217107314111560957
       vertices: []
       indices: 
       edges: []

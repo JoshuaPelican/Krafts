@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3946618882648880713}
   - component: {fileID: 5601729596307550867}
   m_Layer: 8
-  m_Name: Fish
+  m_Name: Popsicle_S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1422259861377778311, guid: b0baae0e0e0d958438b82d544fdc9a44,
+  m_Sprite: {fileID: 3217107314111560957, guid: dfcc8881387ca5741841604877dd2c2e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statMods: []
+  glued: 0
 --- !u!60 &5601729596307550867
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -127,7 +128,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.125, y: 0.7083333}
+    oldSize: {x: 0.125, y: 0.9166667}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -135,25 +136,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.4791667, y: -0.3125}
-      - {x: 0.5625, y: -0.22916667}
-      - {x: 0.5208334, y: 0.020833334}
-      - {x: 0.5625, y: 0.0625}
-      - {x: 0.5625, y: 0.1875}
-      - {x: 0.4791667, y: 0.27083334}
-      - {x: 0.4375, y: 0.27083334}
-      - {x: 0.3125, y: 0.14583334}
-      - {x: 0.22916667, y: 0.1875}
-      - {x: 0.10416667, y: 0.3125}
-      - {x: -0.020833334, y: 0.3541667}
-      - {x: -0.14583334, y: 0.3541667}
-      - {x: -0.22916667, y: 0.27083334}
-      - {x: -0.39583334, y: 0.22916667}
-      - {x: -0.5625, y: 0.10416667}
-      - {x: -0.5625, y: -0.14583334}
-      - {x: -0.4791667, y: -0.27083334}
-      - {x: -0.27083334, y: -0.3541667}
-      - {x: 0.020833334, y: -0.3541667}
-      - {x: 0.0625, y: -0.3125}
-      - {x: 0.14583334, y: -0.3125}
-      - {x: 0.3125, y: -0.22916667}
+    - - {x: -0.2916667, y: 0.625}
+      - {x: -0.2916667, y: -0.625}
+      - {x: 0.2916667, y: -0.625}
+      - {x: 0.2916667, y: 0.625}
