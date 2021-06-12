@@ -82,17 +82,20 @@ public class Weapon : MonoBehaviour
         if(value == true)
         {
             transform.SetParent(player);
+            transform.localScale = Vector3.one * shrinkSize;
             transform.localPosition = Vector3.zero;
         }
         else
         {
+            transform.localScale = Vector3.one;
+            transform.localRotation = Quaternion.identity;
+            transform.localPosition = new Vector3(0, -2.5f, -9.5f);
             transform.parent = null;
         }
     }
 
     private void ShrinkWeapon()
     {
-        transform.localScale = Vector3.one * shrinkSize;
     }
 
     public void ApplyStatMods(StatMod[] statMods)
