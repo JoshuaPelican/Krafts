@@ -4,6 +4,10 @@ public class DragDrop : MonoBehaviour
 {
     public static bool holding;
     private bool active;
+
+    private SpriteRenderer rend;
+
+
     public AudioClip placeClip;
     public AudioClip squishClip;
     private AudioSource source;
@@ -11,6 +15,7 @@ public class DragDrop : MonoBehaviour
     private void Start()
     {
         SetActive(true);
+        rend = GetComponent<SpriteRenderer>();
         source = GetComponent<AudioSource>();
     }
 
@@ -32,8 +37,12 @@ public class DragDrop : MonoBehaviour
             transform.position = offsetPos;
 
             float rotationSpeed = InputUtility.HorizontalAxis(true) * 100 * Time.deltaTime;
+            float scaleSpeed = InputUtility.VerticalAxis(true) * 30 * Time.deltaTime;
 
             transform.Rotate(Vector3.forward, rotationSpeed);
+            transform.localScale += scaleSpeed * Vector3.one;
+
+            rend.color = ToolManager.instance.selectedColor;
         }
     }
 
