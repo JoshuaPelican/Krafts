@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 public static class InputUtility
 {
@@ -40,5 +41,20 @@ public static class InputUtility
             Debug.Log("Clicked Nothing");
             return null;
         }
+    }
+
+    public static bool ClickContainsObject(GameObject go)
+    {
+        Collider2D[] hit = Physics2D.OverlapPointAll(MousePosition, LayerMask.GetMask("Part"));
+
+        foreach (Collider2D col in hit)
+        {
+            if(col.gameObject == go)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

@@ -6,7 +6,7 @@ public class DragDrop : MonoBehaviour
     private bool active;
 
     private SpriteRenderer rend;
-
+    private Transform craftBase;
 
     public AudioClip placeClip;
     public AudioClip squishClip;
@@ -14,23 +14,25 @@ public class DragDrop : MonoBehaviour
 
     private void Start()
     {
+        craftBase = GameObject.FindWithTag("Craft").transform;
+
         SetActive(true);
         rend = GetComponent<SpriteRenderer>();
         source = GetComponent<AudioSource>();
     }
 
-    private void OnMouseDown()
-    {
-        if (ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && !active && !holding)
-        {
-            //Debug.Log("Pickup " + name);
-            ToolManager.instance.NextZ();
-            SetActive(true);
-        }
-    }
-
     private void Update()
     {
+        if (Input.GetMouseButtonDown(0) && InputUtility.GetClickedObject() == gameObject)
+        {
+            if (ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && !active && !holding)
+            {
+                //Debug.Log("Pickup " + name);
+                ToolManager.instance.NextZ();
+                SetActive(true);
+            }
+        }
+
         if (active)
         {
             Vector3 offsetPos = new Vector3(InputUtility.MousePosition.x, InputUtility.MousePosition.y, ToolManager.instance.currentZ);
@@ -40,7 +42,8 @@ public class DragDrop : MonoBehaviour
             float scaleSpeed = InputUtility.VerticalAxis(true) * 5 * Time.deltaTime;
 
             transform.Rotate(Vector3.forward, rotationSpeed);
-            transform.localScale = new Vector3(Mathf.Clamp(transform.localScale.x + scaleSpeed, .5f, 4f), Mathf.Clamp(transform.localScale.y + scaleSpeed, .5f, 4f));
+
+            transform.localScale = new Vector3(Mathf.Clamp(transform.localScale.x + scaleSpeed, .5f, 4f), Mathf.Clamp(transform.localScale.y + scaleSpeed, .5f, 4f), 1);
 
             if(TryGetComponent(out Part part))
             {
@@ -50,24 +53,25 @@ public class DragDrop : MonoBehaviour
                 }
             }
         }
-    }
 
-    private void OnMouseUp()
-    {
-        if (ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && active && InputUtility.MousePosition.y > -3.25f)
+        if (Input.GetMouseButtonUp(0) && InputUtility.ClickContainsObject(gameObject))
         {
-            source.pitch = Random.Range(0.9f, 1.1f);
-            if (GetComponent<Part>().CheckGlued())
+            if (ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && active && InputUtility.MousePosition.y > -3.25f)
             {
-                //Play Sound
-                source.PlayOneShot(squishClip, Random.Range(1.1f, 1.4f));
+                source.pitch = Random.Range(0.9f, 1.1f);
+                if (GetComponent<Part>().CheckGlued())
+                {
+                    //Play Sound
+                    source.PlayOneShot(squishClip, Random.Range(1.1f, 1.4f));
+                }
+                else
+                {
+                    transform.parent = craftBase;
+                    source.PlayOneShot(placeClip, Random.Range(.6f, .75f));
+                }
+                //Debug.Log("Place Down " + name);
+                SetActive(false);
             }
-            else
-            {
-                source.PlayOneShot(placeClip, Random.Range(.6f, .75f));
-            }
-            //Debug.Log("Place Down " + name);
-            SetActive(false);
         }
     }
 
