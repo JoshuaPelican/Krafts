@@ -156,8 +156,9 @@ public class ToolManager : MonoBehaviour
 
         float randColor = Random.Range(.96f, 1f);
         glueRend.color = new Color(randColor, randColor, randColor, 1);
-
         newGlue.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(0, 360)));
+
+        newGlue.transform.localScale /= newGlue.transform.parent.localScale.magnitude;
 
         source.pitch = Random.Range(0.9f, 1.1f);
         source.PlayOneShot(glueClip, Random.Range(.2f, .3f));

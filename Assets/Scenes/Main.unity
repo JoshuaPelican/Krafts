@@ -307,10 +307,10 @@ RectTransform:
   m_Father: {fileID: 1758065806}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -513, y: 232}
-  m_SizeDelta: {x: 793.48, y: 228.4}
+  m_AnchorMin: {x: 0.51979166, y: 0}
+  m_AnchorMax: {x: 1, y: 0.29551858}
+  m_AnchoredPosition: {x: -52, y: 36.5}
+  m_SizeDelta: {x: -128.52002, y: -90.600006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &105816801
 Animator:
@@ -432,12 +432,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
+  m_fontSize: 142.5
   m_fontSizeBase: 150
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 80
+  m_fontSizeMax: 150
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -563,7 +563,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 713949415}
   m_HandleRect: {fileID: 713949414}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -918,7 +918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.000061035156, y: 105.99978}
+  m_AnchoredPosition: {x: 0, y: 105.99978}
   m_SizeDelta: {x: 0, y: 211.99956}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &211444427
@@ -1542,10 +1542,10 @@ RectTransform:
   m_Father: {fileID: 1758065806}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 441.8, y: 46}
-  m_SizeDelta: {x: -1103.517, y: 442.9655}
+  m_AnchoredPosition: {x: -38.19995, y: 36.841}
+  m_SizeDelta: {x: -143.51697, y: 461.28278}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &484287508
 MonoBehaviour:
@@ -1570,7 +1570,10 @@ MonoBehaviour:
 
     A + D to Rotate
 
-    W + S To Scale'
+    W + S To Scale
+
+    C to Change
+    Optional Color'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20108d162ed02314888b431b218717ca, type: 2}
   m_sharedMaterial: {fileID: -2309022237021912406, guid: 20108d162ed02314888b431b218717ca,
@@ -1598,12 +1601,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 110
-  m_fontSizeBase: 110
+  m_fontSize: 78.15
+  m_fontSizeBase: 80
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 1375.4
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 40
+  m_fontSizeMax: 80
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
@@ -3020,9 +3023,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -438.09998, y: -61.3}
-  m_SizeDelta: {x: -1096.125, y: 623.4924}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 41.899902, y: -58}
+  m_SizeDelta: {x: -136.125, y: 623.4924}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1864687591
 MonoBehaviour:
@@ -3045,10 +3048,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Click To Pickup / Interact
 
-    Drag To Move
+    Drag To Move Things Around
 
-    C to Change Optional
-    Color'
+    Dont Forget
+    To Glue Stuff Down!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20108d162ed02314888b431b218717ca, type: 2}
   m_sharedMaterial: {fileID: -2309022237021912406, guid: 20108d162ed02314888b431b218717ca,
@@ -3076,12 +3079,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 110
-  m_fontSizeBase: 110
+  m_fontSize: 74.25
+  m_fontSizeBase: 80
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 1375.4
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 40
+  m_fontSizeMax: 80
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
@@ -3090,7 +3093,7 @@ MonoBehaviour:
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 75
+  m_paragraphSpacing: 155.64
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
@@ -3158,10 +3161,10 @@ RectTransform:
   m_Father: {fileID: 1758065806}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -172}
-  m_SizeDelta: {x: 1260, y: 155}
+  m_AnchorMin: {x: 0.162, y: 0.7675556}
+  m_AnchorMax: {x: 0.8242084, y: 1}
+  m_AnchoredPosition: {x: 13.5, y: -46.5}
+  m_SizeDelta: {x: -11, y: -96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1878890584
 MonoBehaviour:
@@ -3213,9 +3216,9 @@ MonoBehaviour:
   m_fontSize: 160
   m_fontSizeBase: 160
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 1375.4
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 40
+  m_fontSizeMax: 160
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256

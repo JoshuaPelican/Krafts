@@ -37,12 +37,18 @@ public class DragDrop : MonoBehaviour
             transform.position = offsetPos;
 
             float rotationSpeed = InputUtility.HorizontalAxis(true) * 100 * Time.deltaTime;
-            float scaleSpeed = InputUtility.VerticalAxis(true) * 30 * Time.deltaTime;
+            float scaleSpeed = InputUtility.VerticalAxis(true) * 5 * Time.deltaTime;
 
             transform.Rotate(Vector3.forward, rotationSpeed);
-            transform.localScale += scaleSpeed * Vector3.one;
+            transform.localScale = new Vector3(Mathf.Clamp(transform.localScale.x + scaleSpeed, .5f, 4f), Mathf.Clamp(transform.localScale.y + scaleSpeed, .5f, 4f));
 
-            rend.color = ToolManager.instance.selectedColor;
+            if(TryGetComponent(out Part part))
+            {
+                if (part.canBeColored)
+                {
+                    rend.color = ToolManager.instance.selectedColor;
+                }
+            }
         }
     }
 
