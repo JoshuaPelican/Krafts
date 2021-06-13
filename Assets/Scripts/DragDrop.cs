@@ -4,17 +4,21 @@ public class DragDrop : MonoBehaviour
 {
     public static bool holding;
     private bool active;
+    public AudioClip placeClip;
+    public AudioClip squishClip;
+    private AudioSource source;
 
     private void Start()
     {
         SetActive(true);
+        source = GetComponent<AudioSource>();
     }
 
     private void OnMouseDown()
     {
         if (ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && !active && !holding)
         {
-            Debug.Log("Pickup " + name);
+            //Debug.Log("Pickup " + name);
             ToolManager.instance.NextZ();
             SetActive(true);
         }
@@ -35,9 +39,19 @@ public class DragDrop : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && active)
+        if (ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && active && InputUtility.MousePosition.y > -3.25f)
         {
-            Debug.Log("Place Down " + name);
+            source.pitch = Random.Range(0.9f, 1.1f);
+            if (GetComponent<Part>().CheckGlued())
+            {
+                //Play Sound
+                source.PlayOneShot(squishClip, Random.Range(1.1f, 1.4f));
+            }
+            else
+            {
+                source.PlayOneShot(placeClip, Random.Range(.6f, .75f));
+            }
+            //Debug.Log("Place Down " + name);
             SetActive(false);
         }
     }

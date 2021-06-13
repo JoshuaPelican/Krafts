@@ -6,7 +6,8 @@ public class Part : MonoBehaviour
 {
     public StatMod[] statMods = new StatMod[] { };
 
-    public bool glued;
+    public bool canBeColored;
+    [HideInInspector] public bool glued;
     private Collider2D col;
     private ContactFilter2D filter;
 
@@ -17,16 +18,28 @@ public class Part : MonoBehaviour
         {
             layerMask = LayerMask.GetMask("Glue")
         };
+        if (canBeColored)
+        {
+            GetComponent<SpriteRenderer>().color = ToolManager.instance.selectedColor;
+        }
     }
 
-    public void CheckGlued()
+    public bool CheckGlued()
     {
         List<Collider2D> attatched = new List<Collider2D>();
         Physics2D.OverlapCollider(col, filter, attatched);
 
-        if (attatched.Count > 1)
+        if (attatched.Count > 0 && attatched.Any(x => x.CompareTag("Glue")))
         {
             glued = true;
+
+            transform.parent = attatched.First(x => x.CompareTag("Glue")).transform;
         }
+        else
+        {
+            glued = false;
+        }
+
+        return glued;
     }
 }

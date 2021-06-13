@@ -10,12 +10,15 @@ public class UIPartGiver : MonoBehaviour
     {
         weaponTransform = GameObject.FindWithTag("Craft").transform;
 
-        GetComponent<Image>().sprite = partToGive.GetComponent<SpriteRenderer>().sprite;
+        Image image = GetComponent<Image>();
+
+        image.sprite = partToGive.GetComponent<SpriteRenderer>().sprite;
+        GetComponent<RectTransform>().sizeDelta = image.sprite.bounds.size * 100;
     }
 
     public void GivePart()
     {
-        if(ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate)
+        if(ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && !DragDrop.holding)
         {
             ToolManager.instance.NextZ();
             Instantiate(partToGive, new Vector3(transform.position.x, transform.position.y, ToolManager.instance.currentZ), Quaternion.identity, weaponTransform);

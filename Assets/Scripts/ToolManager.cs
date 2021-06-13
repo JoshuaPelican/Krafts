@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class ToolManager : MonoBehaviour
 {
@@ -19,6 +20,21 @@ public class ToolManager : MonoBehaviour
     private Tool selectedTool = Tool.Manipulate;
 
     public float currentZ = 0;
+    [HideInInspector] public Color selectedColor = Color.white;
+    private int selectedColorIndex = -1;
+    public Image colorTool;
+    public Transform partGiverContainer;
+
+    public AudioClip glueClip;
+    public AudioClip pickupBottle;
+    public AudioClip placeBottle;
+    private AudioSource source;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+        ChangeColorTool();
+    }
 
     public void NextZ()
     {
@@ -52,6 +68,48 @@ public class ToolManager : MonoBehaviour
         ChangeCursor();
     }
 
+    public void ChangeColorTool()
+    {
+        selectedColorIndex++;
+
+        if(selectedColorIndex >= 8)
+        {
+            selectedColorIndex = 0;
+        }
+
+        switch (selectedColorIndex)
+        {
+            case 0:
+                selectedColor = Color.white / 1.05f; break;
+            case 1:
+                selectedColor = Color.red / 1.25f; break;
+            case 2:
+                selectedColor = new Color(1, 0.5f, 0) / 1.15f; break;
+            case 3:
+                selectedColor = Color.yellow / 1.05f; break;
+            case 4:
+                selectedColor = new Color(0, 0.8f, 0.1f) / 1.15f; break;
+            case 5:
+                selectedColor = new Color(0, 0.3f, 1) / 1.15f; break;
+            case 6:
+                selectedColor = new Color(0.5f, 0, 1) / 1.15f; break;
+            case 7:
+                selectedColor = new Color(1, 0, .75f) / 1.15f; break;
+        }
+
+        selectedColor.a = 1;
+
+        colorTool.color = selectedColor;
+
+        foreach (UIPartGiver partGiver in partGiverContainer.GetComponentsInChildren<UIPartGiver>())
+        {
+            if (partGiver.partToGive.GetComponent<Part>().canBeColored)
+            {
+                partGiver.GetComponent<Image>().color = selectedColor;
+            }
+        }
+    }
+
     private void ChangeCursor()
     {
         switch (SelectedTool)
@@ -73,14 +131,18 @@ public class ToolManager : MonoBehaviour
             {
                 case Tool.Glue:
                     GameObject clickedObject = InputUtility.GetClickedObject();
-                    NextZ();
                     if (InputUtility.ClickedObject)
                     {
-                        GameObject newGlue = Instantiate(gluePrefab, new Vector3(InputUtility.MousePosition.x, InputUtility.MousePosition.y, currentZ), Quaternion.identity, clickedObject.transform);
+                        GameObject newGlue = Instantiate(gluePrefab, new Vector3(InputUtility.MousePosition.x, InputUtility.MousePosition.y, currentZ - .01f), Quaternion.identity, clickedObject.transform);
                         MakeRandomGlue(newGlue);
                     }
                     break;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            ChangeColorTool();
         }
     }
 
@@ -92,9 +154,12 @@ public class ToolManager : MonoBehaviour
 
         newGlue.AddComponent(typeof(BoxCollider2D));
 
-        float randColor = Random.Range(.9f, 1f);
+        float randColor = Random.Range(.96f, 1f);
         glueRend.color = new Color(randColor, randColor, randColor, 1);
 
         newGlue.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(0, 360)));
+
+        source.pitch = Random.Range(0.9f, 1.1f);
+        source.PlayOneShot(glueClip, Random.Range(.2f, .3f));
     }
 }

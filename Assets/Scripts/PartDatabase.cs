@@ -9,7 +9,7 @@ public class PartDatabase : MonoBehaviour
 
     public GameObject[] database = new GameObject[] { };
 
-    private void Start()
+    private void Awake()
     {
         foreach (GameObject part in database)
         {
