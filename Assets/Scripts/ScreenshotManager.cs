@@ -7,8 +7,8 @@ public class ScreenshotManager : MonoBehaviour
     private int fileCounter;
     public new Camera camera;
 
-    //[DllImport("__Internal")]
-    //private static extern void ImageDownloader(string str, string fn);
+    [DllImport("__Internal")]
+    private static extern void ImageDownloader(string str, string fn);
 
     public void Capture()
     {
@@ -25,7 +25,7 @@ public class ScreenshotManager : MonoBehaviour
         byte[] bytes = image.EncodeToPNG();
         Destroy(image);
 
-        //ImageDownloader(System.Convert.ToBase64String(bytes), "Krafts_Screenshot_" + fileCounter);
+        ImageDownloader(System.Convert.ToBase64String(bytes), "Krafts_Screenshot_" + fileCounter + ".jpg");
         fileCounter++;
     }
 }
