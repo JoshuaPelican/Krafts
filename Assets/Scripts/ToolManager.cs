@@ -160,7 +160,7 @@ public class ToolManager : MonoBehaviour
 
         float magnitude = newGlue.transform.parent.localScale.magnitude;
 
-        //newGlue.transform.localScale = new Vector3(newGlue.transform.localScale.x / magnitude, newGlue.transform.localScale.y / magnitude, 1);
+        newGlue.transform.localScale = new Vector3(newGlue.transform.localScale.x / magnitude, newGlue.transform.localScale.y / magnitude, 1);
 
         source.pitch = Random.Range(0.9f, 1.1f);
         source.PlayOneShot(glueClip, Random.Range(.2f, .3f));
