@@ -33,6 +33,11 @@ public class CraftManager : MonoBehaviour
 
         GetAllChildren();
 
+        finishedPanel.SetActive(true);
+    }
+
+    public void ShakeOff()
+    {
         foreach (Transform child in children)
         {
             if (child.TryGetComponent(out Part childPart))
@@ -41,7 +46,7 @@ public class CraftManager : MonoBehaviour
 
                 if (!childPart.glued)
                 {
-                    if(TryGetComponent(out Collider2D col))
+                    if (TryGetComponent(out Collider2D col))
                     {
                         col.enabled = false;
                     }
@@ -51,8 +56,6 @@ public class CraftManager : MonoBehaviour
                 }
             }
         }
-
-        finishedPanel.SetActive(true);
     }
 
     private void GetAllChildren()

@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class DragDrop : MonoBehaviour
 {
     public static bool holding;
     private bool active;
+    public Vector2 placeableArea;
 
     private SpriteRenderer rend;
     private Transform craftBase;
+    private Image blockingImage;
 
     public AudioClip placeClip;
     public AudioClip squishClip;
@@ -15,14 +18,19 @@ public class DragDrop : MonoBehaviour
     private void Start()
     {
         craftBase = GameObject.FindWithTag("Craft").transform;
+        blockingImage = GameObject.FindWithTag("Blocking").GetComponent<Image>();
 
         SetActive(true);
+
         rend = GetComponent<SpriteRenderer>();
         source = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
+        if(blockingImage.raycastTarget != holding)
+            blockingImage.raycastTarget = holding;
+
         if (Input.GetMouseButtonDown(0) && InputUtility.GetClickedObject() == gameObject)
         {
             if (ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && !active && !holding)
@@ -56,21 +64,26 @@ public class DragDrop : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && InputUtility.ClickContainsObject(gameObject))
         {
-            if (ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && active && InputUtility.MousePosition.y > -3.25f)
+            if (ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && active)
             {
-                source.pitch = Random.Range(0.9f, 1.1f);
-                if (GetComponent<Part>().CheckGlued())
+                Vector2 mousePos = InputUtility.MousePosition * 2;
+
+                if(mousePos.x < placeableArea.x && mousePos.x > -placeableArea.x && mousePos.y < placeableArea.y && mousePos.y > -placeableArea.y)
                 {
-                    //Play Sound
-                    source.PlayOneShot(squishClip, Random.Range(1.1f, 1.4f));
+                    source.pitch = Random.Range(0.9f, 1.1f);
+                    if (GetComponent<Part>().CheckGlued())
+                    {
+                        //Play Sound
+                        source.PlayOneShot(squishClip, Random.Range(1.1f, 1.4f));
+                    }
+                    else
+                    {
+                        transform.parent = craftBase;
+                        source.PlayOneShot(placeClip, Random.Range(.6f, .75f));
+                    }
+                    //Debug.Log("Place Down " + name);
+                    SetActive(false);
                 }
-                else
-                {
-                    transform.parent = craftBase;
-                    source.PlayOneShot(placeClip, Random.Range(.6f, .75f));
-                }
-                //Debug.Log("Place Down " + name);
-                SetActive(false);
             }
         }
     }

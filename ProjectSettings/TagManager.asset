@@ -7,6 +7,7 @@ TagManager:
   - Glue
   - Craft
   - Help
+  - Blocking
   layers:
   - Default
   - TransparentFX
