@@ -19,6 +19,8 @@ public class ToolManager : MonoBehaviour
 
     private Tool selectedTool = Tool.Manipulate;
 
+    public Color drawColor;
+
     public float currentZ = 0;
     [HideInInspector] public Color selectedColor = Color.white;
     private int selectedColorIndex = -1;
@@ -45,8 +47,10 @@ public class ToolManager : MonoBehaviour
     {
         None,
         Manipulate,
+        Delete,
         Glue,
-        Tape
+        Paint,
+        Draw,
     }
 
     public Tool SelectedTool
@@ -127,10 +131,11 @@ public class ToolManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            GameObject clickedObject = InputUtility.GetClickedObject();
+
             switch (selectedTool)
             {
                 case Tool.Glue:
-                    GameObject clickedObject = InputUtility.GetClickedObject();
                     if (InputUtility.ClickedObject)
                     {
                         GameObject newGlue = Instantiate(gluePrefab, new Vector3(InputUtility.MousePosition.x, InputUtility.MousePosition.y, currentZ - .01f), Quaternion.identity, clickedObject.transform);

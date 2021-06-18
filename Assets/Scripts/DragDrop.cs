@@ -55,7 +55,7 @@ public class DragDrop : MonoBehaviour
 
             if(TryGetComponent(out Part part))
             {
-                if (part.canBeColored)
+                if (part.canBeColored && Input.GetKeyDown(KeyCode.C))
                 {
                     rend.color = ToolManager.instance.selectedColor;
                 }
