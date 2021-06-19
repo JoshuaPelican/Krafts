@@ -15,9 +15,7 @@ public class Drawable : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
 
         drawMat = new Material(drawShader);
-        Debug.Log(ToolManager.instance.drawColor);
-        Color drawCol = ToolManager.instance.drawColor / 255;
-        drawCol.a = 1;
+        Color drawCol = ToolManager.instance.drawColor;
         drawMat.SetVector("_DrawColor", drawCol);
 
         drawableMat = rend.material;

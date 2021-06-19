@@ -3,8 +3,8 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _Coordinate ("Coordinate", Vector) = (0,0,0,0)
-        _DrawColor ("Draw Color", Color) = (1,0,0,0)
+        _Coordinate("Coordinate", Vector) = (0,0,0,0)
+        _DrawColor("Draw Color", Color) = (1,1,1,1)
     }
     SubShader
     {
@@ -32,6 +32,7 @@
             float4 _MainTex_ST;
             fixed4 _Coordinate;
             fixed4 _DrawColor;
+            fixed _BrushSize;
 
             v2f vert (appdata v)
             {
@@ -45,11 +46,13 @@
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
 
-                float draw = pow(saturate(1 - distance(i.uv, _Coordinate.xy)), 100);
+                float draw = saturate(1 - distance(i.uv, _Coordinate.xy));
 
-                fixed4 drawCol = _DrawColor * (draw * 1);
+                draw = pow(draw, 30);
 
-                return saturate(col + drawCol);
+                fixed4 drawCol = _DrawColor;
+
+                return lerp(col, drawCol, round(draw));
             }
             ENDCG
         }

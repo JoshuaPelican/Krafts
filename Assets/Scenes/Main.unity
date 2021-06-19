@@ -2767,7 +2767,7 @@ MonoBehaviour:
   - {fileID: -5393964713833631684, guid: 65eabac1f8c101d40bf4d00a29806cbf, type: 3}
   gluePrefab: {fileID: 3478190264021317628, guid: 3bf5fd7ef9470d040ac0d3d1073399d9,
     type: 3}
-  drawColor: {r: 0.3094518, g: 0.3094518, b: 0.3584906, a: 1}
+  drawColor: {r: 0.50345683, g: 0.8679245, b: 0.38892844, a: 1}
   currentZ: 0
   selectedColor: {r: 0, g: 0, b: 0, a: 0}
   colorTool: {fileID: 1207274577}

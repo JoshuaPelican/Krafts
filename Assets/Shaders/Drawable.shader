@@ -3,7 +3,7 @@
     Properties
     {
         [HideInInspector] _MainTex ("Texture", 2D) = "white" {}
-        _Color("Tint", Color) = (1,1,1,1)
+        [HideInInspector] _Color("Tint", Color) = (1,1,1,1)
         [HideInInspector] _DrawMap("Draw Map", 2D) = "white" {}
     }
     SubShader
@@ -60,7 +60,7 @@
                 fixed4 drawCol = tex2D(_DrawMap, i.uv);
                 col.rgb *= col.a;
                 
-                fixed4 mainCol = lerp(col, drawCol, drawCol.a);
+                fixed4 mainCol = lerp(col, drawCol, round(drawCol.a));
 
                 return mainCol;
             }
