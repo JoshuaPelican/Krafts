@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CraftManager : MonoBehaviour
@@ -26,6 +25,8 @@ public class CraftManager : MonoBehaviour
     private IEnumerator StartFinish()
     {
         source.Play();
+
+        ToolManager.instance.SelectTool("None");
 
         transform.localScale = Vector3.one * shrinkSize;
 

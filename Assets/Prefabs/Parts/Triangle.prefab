@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3946618882648880717}
   - component: {fileID: 3946618882648880713}
   - component: {fileID: 5312482423834070167}
-  - component: {fileID: 4371521108843528678}
+  - component: {fileID: 3836848820578636846}
+  - component: {fileID: -4267601384444398877}
   m_Layer: 8
-  m_Name: Screw
+  m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f65d6d7a68b29d14e8a74eec968df4be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,13 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2960242546088347903, guid: b0baae0e0e0d958438b82d544fdc9a44,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: b687848f39ec07f4c8592b9f08d30942, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.45833334, y: 0.45833334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statMods: []
-  canBeColored: 0
+  canBeColored: 1
   glued: 0
 --- !u!60 &5312482423834070167
 PolygonCollider2D:
@@ -133,19 +133,21 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5625, y: 0.6875}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.5416667, y: 0.5416667}
+    newSize: {x: 0.45833334, y: 0.45833334}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.28125, y: 0.34375}
-      - {x: -0.28125, y: -0.34375}
-      - {x: 0.28125, y: -0.34375}
-      - {x: 0.28125, y: 0.34375}
---- !u!82 &4371521108843528678
+    - - {x: -0.020833334, y: 0.27083334}
+      - {x: -0.27083334, y: -0.22916667}
+      - {x: -0.27083334, y: -0.27083334}
+      - {x: 0.27083334, y: -0.27083334}
+      - {x: 0.27083334, y: -0.22916667}
+      - {x: 0.020833334, y: 0.27083334}
+--- !u!82 &3836848820578636846
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,3 +243,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4267601384444398877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946618882648880706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e0da09c8a38684ea47a4d68c3841ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawShader: {fileID: 4800000, guid: 3d2ea5eb3b87f1f4db7cea59a97b7dc7, type: 3}

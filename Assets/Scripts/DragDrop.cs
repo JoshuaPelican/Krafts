@@ -64,7 +64,14 @@ public class DragDrop : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && InputUtility.ClickContainsObject(gameObject))
         {
-            if (ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && active)
+            if (ToolManager.instance.readyTrashTool)
+            {
+                SetActive(false);
+                Destroy(gameObject);
+                ToolManager.instance.readyTrashTool = false;
+            }
+
+            else if (ToolManager.instance.SelectedTool == ToolManager.Tool.Manipulate && active)
             {
                 Vector2 mousePos = InputUtility.MousePosition * 2;
 

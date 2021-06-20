@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3946618882648880713}
   - component: {fileID: 5312482423834070167}
   - component: {fileID: 8829326483608593052}
+  - component: {fileID: 2548165151694916211}
   m_Layer: 8
   m_Name: Pipe Cleaner
   m_TagString: Untagged
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f65d6d7a68b29d14e8a74eec968df4be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -240,3 +241,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2548165151694916211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946618882648880706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e0da09c8a38684ea47a4d68c3841ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawShader: {fileID: 4800000, guid: 3d2ea5eb3b87f1f4db7cea59a97b7dc7, type: 3}

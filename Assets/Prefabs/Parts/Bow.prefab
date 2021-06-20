@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3946618882648880717}
   - component: {fileID: 3946618882648880713}
   - component: {fileID: 5312482423834070167}
-  - component: {fileID: 2329289539909314228}
+  - component: {fileID: -7925908290409135394}
+  - component: {fileID: -2671256257649849358}
   m_Layer: 8
-  m_Name: Button_L
+  m_Name: Bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f65d6d7a68b29d14e8a74eec968df4be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0d6e11cb64848a74abe2f20547308d8b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5ce921b325bef046b996754ef7dee18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5833333, y: 0.5833333}
+  m_Size: {x: 0.6666667, y: 0.125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -132,23 +133,31 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5833333, y: 0.5833333}
-    newSize: {x: 0.5833333, y: 0.5833333}
+    oldSize: {x: 0.7083333, y: 0.375}
+    newSize: {x: 0.6666667, y: 0.125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.083333336, y: 0.2916667}
-      - {x: -0.2916667, y: 0.083333336}
-      - {x: -0.2916667, y: -0.083333336}
-      - {x: -0.083333336, y: -0.2916667}
-      - {x: 0.083333336, y: -0.2916667}
-      - {x: 0.2916667, y: -0.083333336}
-      - {x: 0.2916667, y: 0.083333336}
-      - {x: 0.083333336, y: 0.2916667}
---- !u!82 &2329289539909314228
+    - - {x: 0.3541667, y: 0.10416667}
+      - {x: 0.27083334, y: 0.1875}
+      - {x: 0.14486282, y: 0.1875}
+      - {x: 0.020833334, y: 0.10416667}
+      - {x: -0.020833334, y: 0.10416667}
+      - {x: -0.14583334, y: 0.1875}
+      - {x: -0.271732, y: 0.1875}
+      - {x: -0.3541667, y: 0.10416667}
+      - {x: -0.3541667, y: -0.0198645}
+      - {x: -0.27083334, y: -0.1875}
+      - {x: -0.14363211, y: -0.1875}
+      - {x: -0.020833334, y: -0.10416667}
+      - {x: 0.020833334, y: -0.10416667}
+      - {x: 0.14583334, y: -0.1875}
+      - {x: 0.27083334, y: -0.1875}
+      - {x: 0.3541667, y: -0.020833334}
+--- !u!82 &-7925908290409135394
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,3 +253,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2671256257649849358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946618882648880706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e0da09c8a38684ea47a4d68c3841ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawShader: {fileID: 4800000, guid: 3d2ea5eb3b87f1f4db7cea59a97b7dc7, type: 3}

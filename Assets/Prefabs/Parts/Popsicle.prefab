@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 3946618882648880719}
   - component: {fileID: 3946618882648880717}
   - component: {fileID: 3946618882648880713}
-  - component: {fileID: 5312482423834070167}
-  - component: {fileID: 4371521108843528678}
+  - component: {fileID: 5601729596307550867}
+  - component: {fileID: 3170462448046646764}
+  - component: {fileID: 5303593027348484919}
   m_Layer: 8
-  m_Name: Record
+  m_Name: Popsicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f65d6d7a68b29d14e8a74eec968df4be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,13 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2049459409284293795, guid: b0baae0e0e0d958438b82d544fdc9a44,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6e450671e7ee5d147bc2552a00f400a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.20833333, y: 1.1666666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -116,7 +116,7 @@ MonoBehaviour:
   statMods: []
   canBeColored: 0
   glued: 0
---- !u!60 &5312482423834070167
+--- !u!60 &5601729596307550867
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,23 +133,19 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3125, y: 1.3125}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.20833333, y: 1.1666666}
+    newSize: {x: 0.20833333, y: 1.1666666}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.40625, y: 0.65625}
-      - {x: -0.65625, y: 0.40625}
-      - {x: -0.65625, y: -0.40625}
-      - {x: -0.40625, y: -0.65625}
-      - {x: 0.40625, y: -0.65625}
-      - {x: 0.65625, y: -0.40625}
-      - {x: 0.65625, y: 0.40625}
-      - {x: 0.40625, y: 0.65625}
---- !u!82 &4371521108843528678
+    - - {x: -0.10416667, y: 0.5833334}
+      - {x: -0.10416667, y: -0.5833334}
+      - {x: 0.10416667, y: -0.5833334}
+      - {x: 0.10416667, y: 0.5833334}
+--- !u!82 &3170462448046646764
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,3 +241,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5303593027348484919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946618882648880706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e0da09c8a38684ea47a4d68c3841ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawShader: {fileID: 4800000, guid: 3d2ea5eb3b87f1f4db7cea59a97b7dc7, type: 3}

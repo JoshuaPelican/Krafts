@@ -33,12 +33,12 @@ public static class InputUtility
 
         if (ClickedObject)
         {
-            Debug.Log("Clicked " + hit.name);
+            //Debug.Log("Clicked " + hit.name);
             return hit.gameObject;
         }
         else
         {
-            Debug.Log("Clicked Nothing");
+            //Debug.Log("Clicked Nothing");
             return null;
         }
     }

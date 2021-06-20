@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 3946618882648880717}
   - component: {fileID: 3946618882648880713}
   - component: {fileID: 5312482423834070167}
-  - component: {fileID: 5939942894169207688}
-  - component: {fileID: 5032215752982887715}
+  - component: {fileID: 3836848820578636846}
+  - component: {fileID: -6134175099854727952}
   m_Layer: 8
-  m_Name: Paper_L
+  m_Name: Diamond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 90f5a23a5f7e2d946a96dcb9bd1f5640, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 03dc7ec4c877e4b47b59184f2b69a167, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.1666667, y: 1.4166666}
+  m_Size: {x: 0.45833334, y: 0.45833334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -133,19 +133,23 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1666667, y: 1.4166666}
-    newSize: {x: 2.1666667, y: 1.4166666}
+    oldSize: {x: 0.5416667, y: 0.5416667}
+    newSize: {x: 0.45833334, y: 0.45833334}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.0833334, y: 0.7083334}
-      - {x: -1.0833334, y: -0.7083334}
-      - {x: 1.0833334, y: -0.7083334}
-      - {x: 1.0833334, y: 0.7083334}
---- !u!82 &5939942894169207688
+    - - {x: -0.020833334, y: 0.27083334}
+      - {x: -0.27083334, y: 0.020833334}
+      - {x: -0.27083334, y: -0.020833334}
+      - {x: -0.020833334, y: -0.27083334}
+      - {x: 0.020833334, y: -0.27083334}
+      - {x: 0.27083334, y: -0.020833334}
+      - {x: 0.27083334, y: 0.020833334}
+      - {x: 0.020833334, y: 0.27083334}
+--- !u!82 &3836848820578636846
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,7 +245,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5032215752982887715
+--- !u!114 &-6134175099854727952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

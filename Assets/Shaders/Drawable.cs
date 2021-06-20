@@ -37,11 +37,25 @@ public class Drawable : MonoBehaviour
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            mousePos += ((Vector2)rend.sprite.bounds.extents * transform.localScale) - (Vector2)transform.position;
+            mousePos -= (Vector2)transform.position;
+
+            if(transform.localRotation.w > 0)
+                mousePos = transform.localRotation * mousePos * -1;
+            else
+                mousePos = transform.localRotation * mousePos;
+
+            Debug.Log(transform.localRotation);
+
+            mousePos += (Vector2)rend.sprite.bounds.extents * transform.localScale;
+
+
             mousePos *= rend.sprite.pixelsPerUnit;
             mousePos.x /= rend.sprite.texture.width;
             mousePos.y /= rend.sprite.texture.height;
+
+
             mousePos /= transform.localScale;
+
 
             drawMat.SetVector("_Coordinate", new Vector4(mousePos.x, mousePos.y, 0, 0));
 

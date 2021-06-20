@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3946618882648880713}
   - component: {fileID: 5312482423834070167}
   - component: {fileID: 4094831342756686497}
+  - component: {fileID: 920096434296805823}
   m_Layer: 8
   m_Name: Scissors
   m_TagString: Untagged
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f65d6d7a68b29d14e8a74eec968df4be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 293053302825587759, guid: b0baae0e0e0d958438b82d544fdc9a44, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ab898afd4bc59747a677dd0b65cc127, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,7 +133,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.5}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -140,37 +141,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.0625, y: -0.25}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.6875, y: -0.5}
-      - {x: 0.75, y: -0.4375}
-      - {x: 0.75, y: -0.125}
-      - {x: 0.4375, y: 0}
-      - {x: 0.75, y: 0.125}
-      - {x: 0.75, y: 0.4375}
-      - {x: 0.6875, y: 0.5}
-      - {x: 0.5, y: 0.5}
-      - {x: 0, y: 0.25}
-      - {x: -0.0625, y: 0.3125}
-      - {x: 0, y: 0.375}
-      - {x: 0, y: 0.5}
-      - {x: -0.1875, y: 0.75}
-      - {x: -0.6875, y: 0.75}
-      - {x: -0.75, y: 0.6875}
-      - {x: -0.75, y: 0.125}
-      - {x: -0.625, y: 0}
-      - {x: -0.375, y: 0}
-      - {x: -0.3125, y: 0.0625}
+    - - {x: -0.5, y: 0.5}
+      - {x: -0.5, y: 0.083333336}
+      - {x: -0.4166667, y: 0}
       - {x: -0.25, y: 0}
-      - {x: -0.3125, y: -0.0625}
-      - {x: -0.375, y: 0}
-      - {x: -0.5, y: 0}
-      - {x: -0.75, y: -0.1875}
-      - {x: -0.75, y: -0.75}
-      - {x: -0.1875, y: -0.75}
-      - {x: -0.0625, y: -0.625}
-      - {x: 0, y: -0.375}
-      - {x: -0.0625, y: -0.3125}
+      - {x: -0.33333334, y: 0}
+      - {x: -0.5, y: -0.083333336}
+      - {x: -0.5, y: -0.5}
+      - {x: 0.33333334, y: -0.5}
+      - {x: 0.5, y: -0.4166667}
+      - {x: 0.5, y: 0.4166667}
+      - {x: 0.125, y: 0.5}
 --- !u!82 &4094831342756686497
 AudioSource:
   m_ObjectHideFlags: 0
@@ -267,3 +248,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &920096434296805823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946618882648880706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e0da09c8a38684ea47a4d68c3841ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawShader: {fileID: 4800000, guid: 3d2ea5eb3b87f1f4db7cea59a97b7dc7, type: 3}

@@ -13,11 +13,13 @@ public class ToolManager : MonoBehaviour
 
     public Texture2D manipulateCursor;
     public Texture2D glueCursor;
+    public Texture2D drawCursor;
 
     public Sprite[] glueBlobs;
     public GameObject gluePrefab;
 
     private Tool selectedTool = Tool.Manipulate;
+    public bool readyTrashTool;
 
     public Color drawColor;
 
@@ -28,8 +30,6 @@ public class ToolManager : MonoBehaviour
     public Transform partGiverContainer;
 
     public AudioClip glueClip;
-    public AudioClip pickupBottle;
-    public AudioClip placeBottle;
     private AudioSource source;
 
     private void Start()
@@ -86,19 +86,19 @@ public class ToolManager : MonoBehaviour
             case 0:
                 selectedColor = Color.white / 1.05f; break;
             case 1:
-                selectedColor = Color.red / 1.25f; break;
+                selectedColor = new Color(240, 75, 54) / 255; break;
             case 2:
-                selectedColor = new Color(1, 0.5f, 0) / 1.15f; break;
+                selectedColor = new Color(255, 133, 27) / 255; break;
             case 3:
-                selectedColor = Color.yellow / 1.05f; break;
+                selectedColor = new Color(255, 217, 84) / 255; break;
             case 4:
-                selectedColor = new Color(0, 0.8f, 0.1f) / 1.15f; break;
+                selectedColor = new Color(45, 205, 65) / 255; break;
             case 5:
-                selectedColor = new Color(0, 0.3f, 1) / 1.15f; break;
+                selectedColor = new Color(65, 150, 220) / 255; break;
             case 6:
-                selectedColor = new Color(0.5f, 0, 1) / 1.15f; break;
+                selectedColor = new Color(172, 96, 191) / 255; break;
             case 7:
-                selectedColor = new Color(1, 0, .75f) / 1.15f; break;
+                selectedColor = new Color(240, 120, 215) / 255; break;
         }
 
         selectedColor.a = 1;
@@ -123,6 +123,9 @@ public class ToolManager : MonoBehaviour
                 break;
             case Tool.Glue:
                 Cursor.SetCursor(glueCursor, Vector2.zero, CursorMode.Auto);
+                break;
+            case Tool.Draw:
+                Cursor.SetCursor(drawCursor, Vector2.zero, CursorMode.Auto);
                 break;
         }
     }
