@@ -119,7 +119,7 @@ public class ToolManager : MonoBehaviour
         switch (SelectedTool)
         {
             case Tool.Manipulate:
-                Cursor.SetCursor(manipulateCursor, Vector2.one * 24, CursorMode.Auto);
+                Cursor.SetCursor(manipulateCursor, Vector2.zero, CursorMode.Auto);
                 break;
             case Tool.Glue:
                 Cursor.SetCursor(glueCursor, Vector2.zero, CursorMode.Auto);
