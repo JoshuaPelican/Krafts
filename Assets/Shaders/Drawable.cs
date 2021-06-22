@@ -39,12 +39,21 @@ public class Drawable : MonoBehaviour
 
             mousePos -= (Vector2)transform.position;
 
-            if(transform.localRotation.w > 0)
-                mousePos = transform.localRotation * mousePos * -1;
-            else
-                mousePos = transform.localRotation * mousePos;
 
-            Debug.Log(transform.localRotation);
+            //Rotation Garbage Code That Kinda Works
+            Quaternion rot = transform.localRotation;
+            rot.z = Mathf.Abs(rot.z);
+            rot.z -= .4f;
+            if (Mathf.Round(Mathf.Abs(rot.z)) == 1 || Mathf.Abs(transform.localRotation.z) <= 0.1f)
+            {
+                mousePos = transform.localRotation * mousePos;
+            }
+            else
+            {
+                mousePos = transform.localRotation * mousePos * -1;
+            }
+
+            //Debug.Log(transform.localRotation);
 
             mousePos += (Vector2)rend.sprite.bounds.extents * transform.localScale;
 

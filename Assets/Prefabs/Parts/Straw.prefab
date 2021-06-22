@@ -133,7 +133,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.125, y: 2.25}
+    oldSize: {x: 0.125, y: 1.875}
     newSize: {x: 0.6666667, y: 0.125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -141,10 +141,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.0625, y: 1.125}
-      - {x: -0.0625, y: -1.125}
-      - {x: 0.0625, y: -1.125}
-      - {x: 0.0625, y: 1.125}
+    - - {x: -0.0625, y: 0.9375}
+      - {x: -0.0625, y: -0.9375}
+      - {x: 0.0625, y: -0.9375}
+      - {x: 0.0625, y: 0.9375}
 --- !u!82 &-7925908290409135394
 AudioSource:
   m_ObjectHideFlags: 0
